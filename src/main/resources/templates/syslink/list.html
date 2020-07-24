@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="/layui/css/layui.css">
+  <link rel="stylesheet" href="/css/custom.form.css">
+</head>
+<body>
+<div class="panel panel-default operation" hidden>
+  <div class="panel-heading title"></div>
+<div class="layui-card-body">
+<form class="layui-form " action="" lay-filter="info" style="width: 700px;margin-top: 10px">
+      <input name="id" hidden/>
+        <div class="layui-form-item">
+      <label class="layui-form-label">链接名称</label>
+      <div class="layui-input-block">
+        <input type="name" name="name" placeholder="请输入链接名称" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+        <div class="layui-form-item">
+      <label class="layui-form-label">链接描述</label>
+      <div class="layui-input-block">
+        <input type="description" name="description" placeholder="请输入链接描述" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+        <div class="layui-form-item">
+      <label class="layui-form-label">访问地址URL</label>
+      <div class="layui-input-block">
+        <input type="url" name="url" placeholder="请输入访问地址URL" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+        <!--<div class="layui-form-item">
+      <label class="layui-form-label">访问短地址URL</label>
+      <div class="layui-input-block">
+        <input type="shortUrl" name="shortUrl" placeholder="请输入访问短地址URL" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+        <div class="layui-form-item">
+      <label class="layui-form-label">点击次数</label>
+      <div class="layui-input-block">
+        <input type="totalClickCount" name="totalClickCount" placeholder="请输入点击次数" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+        <div class="layui-form-item">
+      <label class="layui-form-label">是否提取码访问(0：否 1：是)</label>
+      <div class="layui-input-block">
+        <input type="isOpen" name="isOpen" placeholder="请输入是否提取码访问(0：否 1：是)" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+        <div class="layui-form-item">
+      <label class="layui-form-label">提取码</label>
+      <div class="layui-input-block">
+        <input type="extractCode" name="extractCode" placeholder="请输入提取码" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+        <div class="layui-form-item">
+      <label class="layui-form-label">保存天数</label>
+      <div class="layui-input-block">
+        <input type="days" name="days" placeholder="请输入保存天数" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+        <div class="layui-form-item">
+      <label class="layui-form-label">过期日期</label>
+      <div class="layui-input-block">
+        <input type="expirationDate" name="expirationDate" placeholder="请输入过期日期" autocomplete="off" class="layui-input">
+      </div>
+    </div>-->
+        <div class="layui-form-item">
+      <label class="layui-form-label">排序</label>
+      <div class="layui-input-block">
+        <input type="orderNum" name="orderNum" placeholder="请输入排序" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+        <!--<div class="layui-form-item">
+      <label class="layui-form-label">类型(1:普通;2:短链接;3:其它)</label>
+      <div class="layui-input-block">
+        <input type="type" name="type" placeholder="请输入类型(1:普通;2:短链接;3:其它)" autocomplete="off" class="layui-input">
+      </div>
+    </div>-->
+    <!--<div class="layui-form-item">
+      <label class="layui-form-label">状态(1:正常 0：禁用)</label>
+      <div class="layui-input-block">
+        <input type="status" name="status" placeholder="请输入状态(1:正常 0：禁用)" autocomplete="off" class="layui-input">
+      </div>
+    </div>-->
+    <div class="layui-form-item">
+        <label class="layui-form-label">状态</label>
+        <div class="layui-input-block">
+            <input type="checkbox" name="status" lay-skin="switch" lay-filter="switch" lay-text="启用|禁用" checked>
+        </div>
+    </div>
+
+        <!--<div class="layui-form-item">
+      <label class="layui-form-label">创建时间</label>
+      <div class="layui-input-block">
+        <input type="createTime" name="createTime" placeholder="请输入创建时间" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+        <div class="layui-form-item">
+      <label class="layui-form-label">更新时间</label>
+      <div class="layui-input-block">
+        <input type="updateTime" name="updateTime" placeholder="请输入更新时间" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+        <div class="layui-form-item">
+      <label class="layui-form-label">是否删除(1未删除；0已删除)</label>
+      <div class="layui-input-block">
+        <input type="deleted" name="deleted" placeholder="请输入是否删除(1未删除；0已删除)" autocomplete="off" class="layui-input">
+      </div>
+    </div>-->
+  <div class="layui-form-item">
+  <div class="layui-input-block">
+    <button type="submit" class="layui-btn" lay-submit="" lay-filter="submit">保存</button>
+    <button  class="layui-btn layui-btn-primary" id="btn_cancel">返回</button>
+  </div>
+</div>
+</form>
+</div>
+</div>
+
+<div class="table_div">
+  <div id="searchParam"  shiro:hasPermission="sysLink:list">
+    <div class="layui-form-item">
+      <div class="layui-input-inline">
+        <input type="text" id="key" class="layui-input"  autocomplete="off" placeholder="请输入">
+      </div>
+
+      <div class="layui-input-inline ">
+        <button class="layui-btn" onclick="search()"  id="search">查询</button>
+        <button class="layui-btn"   id="export">导出全部</button>
+      </div>
+    </div>
+
+  </div>
+  <table class="layui-table" id="showTable" lay-filter="showTable" ></table>
+</div>
+<script type="text/html" id="toolbar">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="add"  shiro:hasPermission="sysLink:add">添加</button>
+    <button class="layui-btn layui-btn-sm" lay-event="batchDeleted" shiro:hasPermission="sysLink:delete">删除</button>
+  </div>
+</script>
+<script type="text/html" id="tool">
+  <a class="layui-btn layui-btn-xs" lay-event="edit" shiro:hasPermission="sysLink:update">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" shiro:hasPermission="sysLink:delete">删除</a>
+</script>
+
+</body>
+</html>
+<script src="/layui/layui.all.js"></script>
+<script src="/js/core.util.js"></script>
+<script>
+  //获取token
+  var token = CoreUtil.getData("access_token");
+  //地址栏转义token中的#号
+  var tokenQuery = token.replace("#", "%23");
+  var tableIns1;
+  var table = layui.table;
+  var form = layui.form;
+  var layer = layui.layer;
+  var $ = jQuery = layui.jquery;
+  var laydate = layui.laydate;
+
+  layui.use(['table', 'layer', 'laydate'], function () {
+
+    //加载table
+    tableIns1 = table.render({
+      elem: '#showTable'
+      , contentType: 'application/json'
+      , headers: {"authorization": token}
+      , page: true //开启分页
+      , url: '/sysLink/listByPage' //数据接口
+      , method: 'POST'
+      , parseData: function (res) { //将原始数据解析成 table 组件所规定的数据
+        return {
+          "code": res.code, //解析接口状态
+          "msg": res.msg, //解析提示文本
+          "count": CoreUtil.isEmpty(res.data) ? 0 : res.data.total, //解析数据长度
+          "data": CoreUtil.isEmpty(res.data) ? null : res.data.records //解析数据列表
+        }
+      }
+      , cols: [
+        [
+          {type: 'checkbox', fixed: 'left'},
+          //{field: 'id', title: '主键', sort: true},
+          {field: 'name', title: '链接名称', sort: true},
+          //{field: 'description', title: '链接描述', sort: true},
+          {field: 'url', title: '访问地址URL', sort: true},
+          //{field: 'shortUrl', title: '访问短地址URL', sort: false},
+          //{field: 'totalClickCount', title: '点击次数', sort: false},
+          //{field: 'isOpen', title: '是否提取码访问(0：否 1：是)', sort: false},
+          //{field: 'extractCode', title: '提取码', sort: false},
+          //{field: 'days', title: '保存天数', sort: false},
+          //{field: 'expirationDate', title: '过期日期', sort: false},
+          {field: 'orderNum', title: '排序', sort: true},
+          //{field: 'type', title: '类型(1:普通;2:短链接;3:其它)', sort: true},
+            {
+                field: 'type', title: '类型', width: 100, templet: function (item) {
+                    if (item.type === 1) {
+                        return "普通";
+                    }
+                    if (item.type === 2) {
+                        return "短链接";
+                    }
+                    if (item.type === 3) {
+                        return "其它";
+                    }
+                }
+            },
+          //{field: 'status', title: '状态(1:正常 0：禁用)', sort: true},
+
+            {
+                field: 'status', title: '状态', width: 100, templet: function (item) {
+                    if (item.status === 1) {
+                        return '  <input type="checkbox" lay-skin="switch" lay-text="正常|禁用" checked disabled>';
+                    }
+                    if (item.status === 0) {
+                        return '  <input type="checkbox" lay-skin="switch" lay-text="正常|禁用" disabled>';
+                    }
+                }
+            },
+
+          {field: 'createTime', title: '创建时间', sort: true},
+          {field: 'updateTime', title: '更新时间', sort: true},
+          //{field: 'deleted', title: '是否删除(1未删除；0已删除)', sort: false},
+          {width: 120, toolbar: "#tool", title: '操作'}
+        ]
+      ]
+      , toolbar: '#toolbar'
+    });
+
+
+    //表头工具
+    table.on('toolbar(showTable)', function(obj){
+      switch(obj.event){
+        case 'batchDeleted':
+          var checkStatus = table.checkStatus(obj.config.id);
+          var data = checkStatus.data;
+          if(data.length==0){
+            layer.msg("请选择要批量删除的列");
+          }else {
+            var ids = [];
+            $(data).each(function (index,item) {
+              ids.push(item.id);
+            });
+            tipDialog(ids);
+          }
+          break;
+        case 'add':
+          $(".table_div").hide();
+          $(".operation").show();
+          $(".title").html("新增");
+          $(".operation input[name=id]").val("");
+          $(".operation input[name=name]").val("");
+          $(".operation input[name=description]").val("");
+          $(".operation input[name=url]").val("");
+          $(".operation input[name=shortUrl]").val("");
+          $(".operation input[name=totalClickCount]").val("");
+          $(".operation input[name=isOpen]").val("");
+          $(".operation input[name=extractCode]").val("");
+          $(".operation input[name=days]").val("");
+          $(".operation input[name=expirationDate]").val("");
+          $(".operation input[name=orderNum]").val("");
+          $(".operation input[name=type]").val("");
+          //$(".operation input[name=status]").val("");
+
+            $(".operation input[name=status]").attr('checked', 'checked');
+            $(".operation input[name=status]").attr('type', 'hidden').val(1);
+            var x = document.getElementsByClassName("layui-unselect layui-form-switch");
+            x[0].setAttribute("class", "layui-unselect layui-form-switch layui-form-onswitch");
+            var d = document.getElementsByTagName('em')[0];
+            d.firstChild.nodeValue = '启用';
+            form.render(); //更新全部
+
+          $(".operation input[name=createTime]").val("");
+          $(".operation input[name=updateTime]").val("");
+          $(".operation input[name=deleted]").val("");
+          break;
+      };
+    });
+    //列操作
+    table.on('tool(showTable)',function (obj) {
+      var data = obj.data;
+      switch (obj.event) {
+        case 'del':
+          var ids=[];
+          ids.push(data.id);
+          tipDialog(ids);
+          break;
+        case 'edit':
+          $(".table_div").hide();
+          $(".operation").show();
+          $(".title").html("编辑");
+          $(".operation input[name=id]").val(data.id);
+          $(".operation input[name=name]").val(data.name);
+          $(".operation input[name=description]").val(data.description);
+          $(".operation input[name=url]").val(data.url);
+          $(".operation input[name=shortUrl]").val(data.shortUrl);
+          $(".operation input[name=totalClickCount]").val(data.totalClickCount);
+          $(".operation input[name=isOpen]").val(data.isOpen);
+          $(".operation input[name=extractCode]").val(data.extractCode);
+          $(".operation input[name=days]").val(data.days);
+          $(".operation input[name=expirationDate]").val(data.expirationDate);
+          $(".operation input[name=orderNum]").val(data.orderNum);
+          $(".operation input[name=type]").val(data.type);
+          //$(".operation input[name=status]").val(data.status);
+            if (data.status == 1) {
+                $(".operation input[name=status]").attr('checked', 'checked');
+                $(".operation input[name=status]").attr('type', 'hidden').val(1);
+                var x = document.getElementsByClassName("layui-unselect layui-form-switch");
+                x[0].setAttribute("class", "layui-unselect layui-form-switch layui-form-onswitch");
+                var d = document.getElementsByTagName('em')[0];
+                d.firstChild.nodeValue = '启用';
+            } else {
+                $(".operation input[name=status]").attr('type', 'hidden').removeAttr("checked").val(0);
+                var x = document.getElementsByClassName("layui-unselect layui-form-switch");
+                x[0].setAttribute("class", "layui-unselect layui-form-switch");
+                var d = document.getElementsByTagName('em')[0];
+                d.firstChild.nodeValue = '禁用';
+            }
+            form.render(); //更新全部
+          $(".operation input[name=createTime]").val(data.createTime);
+          $(".operation input[name=updateTime]").val(data.updateTime);
+          $(".operation input[name=deleted]").val(data.deleted);
+          break;
+      }
+    });
+
+    //导出
+    $('#export').on('click', function () {
+      //原先分页limit
+      var exportParams = {
+        limit: 10000,
+        key: $("#key").val()
+      };
+      CoreUtil.sendPost("/sysLink/listByPage", exportParams, function (res) {
+        //初始化渲染数据
+        if (res.data != null && res.data.records != null) {
+          table.exportFile(tableIns1.config.id, res.data.records, 'xls');
+        }
+      });
+    });
+
+    //删除
+    var tipDialog=function (ids) {
+      layer.open({
+        content: "确定要删除么?",
+        yes: function(index, layero){
+          layer.close(index); //如果设定了yes回调，需进行手工关闭
+          CoreUtil.sendDelete("/sysLink/delete",ids,function (res) {
+            layer.msg(res.msg, {time:1000},function () {
+              search();
+            });
+          });
+        }
+      });
+    };
+
+    //返回
+    $("#btn_cancel").click(function() {
+      $(".table_div").show();
+      $(".operation").hide();
+      return false;
+    });
+
+    //监听保存
+    form.on('submit(submit)', function(data){
+      if(data.field.id===undefined || data.field.id===null || data.field.id===""){
+        CoreUtil.sendPost("/sysLink/add",data.field,function (res) {
+          $(".table_div").show();
+          $(".operation").hide();
+          search();
+        });
+      }else {
+        CoreUtil.sendPut("/sysLink/update",data.field,function (res) {
+          $(".table_div").show();
+          $(".operation").hide();
+          search();
+        });
+      }
+
+      return false;
+    });
+  });
+
+  //执行查询
+  function search() {
+    //这里以搜索为例
+    tableIns1.reload({
+      where: { //设定异步数据接口的额外参数，任意设
+        key: $("#key").val()
+      }
+      , page: {
+        curr: 1 //重新从第 1 页开始
+      }
+    });
+  };
+</script>

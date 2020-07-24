@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.project.mapper.SysLinkMapper">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.company.project.entity.SysLinkEntity" id="sysLinkMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="description" column="description"/>
+        <result property="url" column="url"/>
+        <result property="shortUrl" column="short_url"/>
+        <result property="totalClickCount" column="total_click_count"/>
+        <result property="isOpen" column="is_open"/>
+        <result property="extractCode" column="extract_code"/>
+        <result property="days" column="days"/>
+        <result property="expirationDate" column="expiration_date"/>
+        <result property="orderNum" column="order_num"/>
+        <result property="type" column="type"/>
+        <result property="status" column="status"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="deleted" column="deleted"/>
+    </resultMap>
+
+
+</mapper>
